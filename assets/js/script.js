@@ -62,6 +62,7 @@ function renderTaskList() {
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
     event.preventDefault();
+
     const task = {
         id: generateTaskId(),
         title: $("#taskTitle").val(),
@@ -72,6 +73,7 @@ function handleAddTask(event) {
     taskList.push(task);
     localStorage.setItem("tasks", JSON.stringify(taskList));
     localStorage.setItem("nextId", JSON.stringify(nextId));
+
     $("#formModal").modal('hide');
     renderTaskList();
 }
